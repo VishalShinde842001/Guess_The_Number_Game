@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    header {
+      background-color: #f4476b; /* Registration page header color */
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .footer {
+      background-color: #f8f9fa;
+      padding: 20px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .mt-5 {
+      margin-top: 5rem !important;
+    }
+
+    .mt-3 {
+      margin-top: 3rem !important;
+    }
+
+    /* Style for the Score Section */
+    .score-section {
+      margin-top: 20px;
+    }
+
+    .score-display {
+      font-size: 36px;
+      font-weight: bold;
+      color: #007bff; /* Score text color */
+    }
+
+    .score-not-available {
+      font-size: 24px;
+      color: #6c757d; /* Score not available text color */
+    }
+
+    .load-score-btn,
+    .action-btn {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+  <title>Your Project</title>
+</head>
+
+<body>
+
+  <!-- Header Section -->
+  <div class="header">
+    <h1>Welcome To Guess the Number Game</h1>
+  </div>
+
+  <!-- Content Section -->
+  <div class="container">
+    <div class="score-section text-center">
+      <div *ngIf="myScore !== -1" class="score-display">
+        Your Score: {{ myScore }}
+      </div>
+      <div *ngIf="myScore === -1" class="score-not-available">
+        Score not available
+      </div>
+
+      <button (click)="loadScore()" class="btn btn-primary load-score-btn">Load Score</button>
+
+      <!-- Additional Buttons -->
+      <div class="mt-3">
+        <button (click)="playagain()" class="btn btn-success action-btn">Play Again</button>
+      </div>
+      <div class="mt-3">
+        <button (click)="quit()" class="btn btn-danger action-btn">Quit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="footer">
+    <p>&copy; 2024 Your Company. All rights reserved. Designed and Developed By Vishal Shinde</p>
+  </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

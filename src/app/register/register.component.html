@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Number Registration</title>
+
+    <!-- Include Bootstrap CSS (you may include it in your project based on your setup) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .register-photo {
+            background: #f1f7fc;
+            padding: 80px 0;
+        }
+
+        .register-photo .image-holder {
+            display: table-cell;
+            width: auto;
+            background: url('https://via.placeholder.com/600x400'); /* Placeholder image URL, replace with your actual image path */
+            background-size: cover;
+        }
+
+        .register-photo .form-container {
+            display: flex; /* Changed display to flex */
+            justify-content: center; /* Center the form horizontally */
+            align-items: center; /* Center the form vertically */
+            height: 100vh; /* Make the form take full height */
+        }
+
+        .register-photo form {
+            width: 400px;
+            background-color: #ffffff;
+            padding: 40px 60px;
+            color: #505e6c;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 991px) {
+            .register-photo form {
+                padding: 40px;
+            }
+        }
+
+        .register-photo form h2 {
+            font-size: 24px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            text-align: center; /* Centering the heading */
+        }
+
+        .register-photo form .form-control {
+            background: #f7f9fc;
+            border: none;
+            border-bottom: 1px solid #dfe7f1;
+            border-radius: 0;
+            box-shadow: none;
+            outline: none;
+            color: inherit;
+            text-indent: 6px;
+            height: 40px;
+        }
+
+        .register-photo form .btn-primary {
+            background: #f4476b;
+            border: none;
+            border-radius: 4px;
+            padding: 11px;
+            box-shadow: none;
+            margin-top: 35px;
+            text-shadow: none;
+            outline: none !important;
+        }
+
+        .register-photo form .btn-primary:hover,
+        .register-photo form .btn-primary:active {
+            background: #eb3b60;
+        }
+
+        .register-photo form .btn-primary:active {
+            transform: translateY(1px);
+        }
+
+        .register-photo form .already {
+            display: block;
+            text-align: center;
+            font-size: 12px;
+            color: #6f7a85;
+            opacity: 0.9;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .register-photo form .already a {
+            color: #f4476b;
+        }
+
+        .register-photo form .already a:hover {
+            text-decoration: underline;
+        }
+
+        .register-photo .register-msg {
+            text-align: center;
+            color: #f4476b;
+            margin-top: 20px;
+        }
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand text-center w-100">Welcome to Guess The Number</a>
+</nav>
+
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="register-msg" *ngIf="registerMsg !== ''">{{registerMsg}}</div>
+      <div class="form-container"> <!-- Surround the form with a container -->
+        <form (submit)="register()" class="mt-4">
+          <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input [(ngModel)]="registerUser.first_name" name="first_name" id="first_name" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input [(ngModel)]="registerUser.last_name" name="last_name" id="last_name" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input [(ngModel)]="registerUser.email" name="email" id="email" type="email" class="form-control" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input [(ngModel)]="registerUser.password" name="password" id="password" type="password" class="form-control" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Register</button>
+          <p class="already">Already have an account? <a href="/login">Login now</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer mt-4">
+  <div class="container text-center">
+    <p>&copy; 2024 Your Company. All rights reserved. Designed and Developed By Vishal Shinde</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS and Popper.js (if needed) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

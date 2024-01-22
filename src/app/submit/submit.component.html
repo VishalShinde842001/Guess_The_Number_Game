@@ -1,0 +1,25 @@
+<!-- submit.component.html -->
+<!-- submit.component.html -->
+<div class="container">
+  <div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="box">
+      <h2 class="text-center">Submit Number</h2>
+      <form (submit)="submitNumber()">
+        <div class="form-group">
+          <label for="num">Enter Number:</label>
+          <input [(ngModel)]="num" name="num" type="number" class="form-control" required>
+        </div>
+        <p *ngIf="submitResponse.msg" class="text-danger text-center">{{ submitResponse.msg }}</p>
+        <input type="submit" value="Submit Number" class="btn btn-primary btn-block">
+      </form>
+      <button class="btn btn-danger btn-block mt-3" (click)="quit()">Quit</button>
+    </div>
+  </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer mt-auto">
+  <div class="container text-center">
+    <p>&copy; 2024 Your Company. All rights reserved. Designed and Developed By Vishal Shinde</p>
+  </div>
+</footer>

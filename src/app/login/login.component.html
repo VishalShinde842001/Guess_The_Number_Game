@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+
+    <!-- Include Bootstrap CSS (you may include it in your project based on your setup) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add your custom styles here */
+
+       
+
+        .login-container {
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .login-container p {
+            color: #f4476b;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .login-container input[type="submit"] {
+            background-color: #f4476b;
+            color: #ffffff;
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #eb3b60;
+        }
+
+        .navbar {
+            background-color: #f8f9fa;
+        }
+
+        .navbar-brand {
+            text-align: center;
+            width: 100%;
+        }
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand text-center w-100">Welcome to Guess The Number</a>
+</nav>
+
+<div class="container">
+    <div class="login-container">
+        <h2>Login</h2>
+        <form (click)="login() ; isSubmitClicked = true">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input [(ngModel)]="userLogin.email" name="email" type="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input [(ngModel)]="userLogin.password" name="password" type="password" class="form-control" required>
+            </div>
+            <p *ngIf="isSubmitClicked && loginMsg !== ''">{{loginMsg}}</p>
+            <input type="submit" value="Login" class="btn btn-primary" >
+        </form>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer mt-4">
+    <div class="container text-center">
+      <p>&copy; 2024 Your Company. All rights reserved. Designed and Developed By Vishal Shinde</p>
+    </div>
+  </footer>
+
+<!-- Bootstrap JS and Popper.js (if needed) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .btn-group {
+            margin-top: auto;
+            text-align: center;
+        }
+        .vertical-btn-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn-group button {
+            margin: 10px 5px; /* Increase the horizontal margin and add vertical margin */
+            width: 150px;
+            height: 60px;
+            background-color: #007bff;
+            border: 1px solid #007bff;
+            color: #fff;
+            border-radius: 5px;
+            display: block;
+        }
+        .btn-group button:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            color: #fff;
+        }
+        .footer {
+            margin-top: auto;
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+    <title>Your Game</title>
+</head>
+<body>
+
+<!-- Header Section from Registration Page -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand text-center w-100">Welcome to Guess The Number</a>
+</nav>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="text-center mb-4">Game Menu</h2>
+
+            <!-- Vertical Button Group -->
+            <div class="vertical-btn-group d-flex flex-column">
+                <button class="btn btn-primary" (click)="start()">Start Game</button>
+                <button class="btn btn-primary" (click)="myBest()">My Best</button>
+                <button class="btn btn-primary">My Scores</button>
+                <button class="btn btn-primary" (click)="logout()">Quit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="myBestScore.score !== -1" class="mt-4">
+    <h3 class="text-center">Your Best Score is</h3>
+    <p class="text-center">Your best score is: {{ myBestScore.score }}</p>
+</div>
+<div *ngIf="myBestScore.score === -1" class="mt-4">
+   
+    <p class="text-center"> {{ myBestScore.email }}</p>
+</div>
+
+
+<!-- Footer Section from Registration Page -->
+<footer class="footer mt-auto">
+    <div class="container text-center">
+        <p>&copy; 2024 Your Company. All rights reserved. Designed and Developed By Vishal Shinde</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

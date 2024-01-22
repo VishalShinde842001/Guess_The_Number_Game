@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: #4c3c3c;
+        }
+
+        .lead {
+            color: #6c757d;
+        }
+
+        .feedback-form {
+            margin-top: 40px;
+        }
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            width: 100%;
+        }
+    </style>
+    <title>Contact Us - Guess The Number</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h2 class="text-center">Feedback Form</h2>
+                <p class="lead text-center">We value your feedback! Please provide your thoughts below:</p>
+
+                <form action="mailto:your@email.com" method="post" enctype="text/plain" class="feedback-form">
+                    <div class="form-group">
+                        <label for="userName">Your Name:</label>
+                        <input type="text" id="userName" name="userName" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="userEmail">Your Email:</label>
+                        <input type="email" id="userEmail" name="userEmail" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedback">Feedback:</label>
+                        <textarea id="feedback" name="feedback" class="form-control" rows="4" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Send Feedback</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Your Company. All rights reserved. Designed and Developed By Vishal Shinde</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
